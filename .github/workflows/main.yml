@@ -36,4 +36,4 @@ jobs:
           DEST_REPO: test-destination
           DEST_BRANCH: main
           DEST_FOLDER: ./
-          DEST_PREDEPLOY_CLEANUP: rm -rf ./*
+          DEST_PREDEPLOY_CLEANUP: rm -rf ./* && echo 'This repo Dev Github Pages for DK64Rando, you need to go to https://github.com/2dos/DK64-Randomizer' > README.md && echo 'dev.dk64randomizer.com' > CNAME && touch .nojekyll
