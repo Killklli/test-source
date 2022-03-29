@@ -27,7 +27,7 @@ jobs:
       
       # Runs a set of commands using the runners shell
       - name: Pushes to another repository
-        uses: dmnemec/github-action-push-to-another-repository@main
+        uses: vinayb21/github-action-push-to-another-repo@master
         env:
           API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
         with:
@@ -35,4 +35,3 @@ jobs:
           destination-github-username: 'killklli'
           destination-repository-name: 'test-destination'
           user-email: deployer@dk64randomizer.com
-          target-branch: main
