@@ -36,4 +36,4 @@ jobs:
           DEST_REPO: test-destination
           DEST_BRANCH: main
           DEST_FOLDER: ./
-          DEST_PREDEPLOY_CLEANUP: rm -rf
+          DEST_PREDEPLOY_CLEANUP: rm -rf ./*
