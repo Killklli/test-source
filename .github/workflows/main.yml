@@ -25,7 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: Move FIles
-        run: mkdir ./deploy-directory && shopt -s extglob dotglob && mv -f !(deploy-directory) ./deploy-directory/
+        run: mkdir ./deploy-directory && mv -f ./* ./deploy-directory/ || true
 
       - name: Deploy
         uses: hpcodecraft/action-deploy-workspace-to-repo@v2.2
