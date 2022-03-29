@@ -24,11 +24,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      
+      - name: Move FIles
+        run: mkdir deploy-directory && mv ./* deploy-directory/
+
       - name: Deploy
         uses: manzoorwanijk/action-deploy-to-repo@master
         with:
-          src_dir: ./
+          src_dir: ./deploy-directory
           target_owner: killklli
           target_repo: test-destination
           target_dir: ./
