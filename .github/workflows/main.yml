@@ -25,13 +25,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      # Runs a set of commands using the runners shell
-      - name: Pushes to another repository
-        uses: vinayb21/github-action-push-to-another-repo@master
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
+      - name: Deploy
+        uses: manzoorwanijk/action-deploy-to-repo@master
         with:
-          source-directory: './'
-          destination-github-username: 'killklli'
-          destination-repository-name: 'test-destination'
-          user-email: deployer@dk64randomizer.com
+          src_dir: ./
+          target_owner: killklli
+          target_repo: test-destination
+          target_dir: ./
+          target_branch: main # default
+          # Optional
+          access_token: ${{ secrets.ACCESS_TOKEN }}
+          cleanup_command: "rm -rf .git*/*"
